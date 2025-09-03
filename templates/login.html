@@ -6,6 +6,12 @@
     <title>Login</title>
 </head>
 <body>
-    
+  
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type = "submit" value = "login"> Login </button>
+
 </body>
 </html>
