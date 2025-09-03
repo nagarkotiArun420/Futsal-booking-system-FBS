@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'profile.css' }%">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <img src = "{{profile.photo.url}}" alt="img" style="width:300px">
+        <div class="profile-card">
+            
+            <p><strong>First name:</strong> {{user.first_name}} </p>
+            <p><strong>Last name:</strong> {{user.last_name}} </p>
+            <p><strong>Username: </strong> {{user.username}} </p>
+            <p><strong>Email:</strong> {{user.email}} </p>
+
+        </div>
+
+        <div class="profile-actions">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
