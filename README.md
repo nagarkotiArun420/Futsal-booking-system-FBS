@@ -10,7 +10,7 @@ A Django-based web application for managing futsal grounds, bookings, users, and
 - ✅ User login implemented  
 - ✅ User logout implemented  
 - ✅User profile (planned)  
-- ⬜ Grounds CRUD (planned)  
+- ✅ Grounds CRUD (planned)  
 - ⬜ Booking form & history (planned)  
 - ⬜ Payment integration (eSewa/Khalti) (planned)  
 - ⬜ UI enhancements (planned)  
