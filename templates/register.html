@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
+{% block title %}Register{% endblock %}
 
-    <form  method = "POST" enctype="multipart/form-data">
-
-        {% csrf_token %}
-
-        {{ user_form.as_p }}
-        {{ profile_form.as_p}}
-        
-        <input type = "submit" value = "register">
-
-
-    </form>
-    
-</body>
-</html>
+{% block content %}
+<h2>Create an Account</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,21 +1,21 @@
+{% extends 'base/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Futsal Management</h1>
+<p>Book futsal grounds online, hassle-free!</p>
+
+<!-- Hero / Featured Post -->
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('path-to-your-image.jpg'); background-blend-mode: overlay; background-size: cover;">
+    <div class="col-md-8 px-0">
+        <h1 class="display-4 font-italic"><a href="#" class="text-white">Featured Post Title</a></h1>
+        <p class="lead my-3">This is a short description of the featured post. It gives a quick overview of what the post is about...</p>
+        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    </div>
+</div>
 
 
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "{% static 'futsal/css/style.css' %}">
-    <title>Home</title>
-</head>
-<body>
 
-    <a href="{% url 'register' %}" >   Register</a> <br>
-    <a href="{% url 'login' %}" >   <button>  Login </button></a> <br>
-    <a href="{% url 'logout' %}">  <button> Logout </button> </a> <br>
-    <a href="{% url 'profile' %}">  <button> User profile </button> </a> <br>
-    
-</body>
-</html>
+<a href="#"><button>Browse Grounds</button></a>
+{% endblock %}
