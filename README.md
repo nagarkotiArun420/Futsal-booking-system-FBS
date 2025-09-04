@@ -41,4 +41,7 @@ A Django-based web application for managing futsal grounds, bookings, users, and
    - Payment callback updates booking status  
 
 
+- Lets polish the UI tomorrow
+
+
 
