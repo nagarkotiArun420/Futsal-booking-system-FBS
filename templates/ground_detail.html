@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Futsal Management</h1>
+<p>Book futsal grounds online, hassle-free!</p>
+
+<img src = "{{ ground_details.photo.url }}" alt = "image" style = "width:400px">
+{{ground_details.ground_name}}
+{{ground_details.location_name}}
+{{ground_details.size}}
+{{ground_details.price_per_hour}}
+
+
+
+<a href="#"><button>Book now</button></a>
+{% endblock %}
