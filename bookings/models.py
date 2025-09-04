@@ -17,7 +17,7 @@ class Book(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     status = models.CharField(max_length=100, choices= STATUS_CHOICE, default='pending')
-    prince = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     booked_at  = models.DateTimeField(auto_now_add = True)
     
     def __str__(self):

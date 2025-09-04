@@ -4,9 +4,28 @@
 {% block content %}
 
 
+<img src = "{{ ground_details.photo.url }}" alt = "image" style = "width:400px">
+{{ground_details.ground_name}}
+{{ground_details.location_name}}
+{{ground_details.size}}
+{{ground_details.price_per_hour}}
+
+
+
+<form method = "post">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <button type = "submit">Book now</button></a>
 
 
 
 
-<a href=""><button>Book now</button></a>
+</form>
+
+
+
+
+
 {% endblock %}

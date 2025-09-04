@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from bookings.models import Book
 from users.models import Profile
 
 
@@ -16,5 +17,10 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('phone','photo')
+        
+class BookingForm (forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ('date','start_time','end_time')
         
     
