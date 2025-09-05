@@ -1,17 +1,34 @@
 {% extends 'base/base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}{{ ground_details.ground_name }}{% endblock %}
+{% load static %}
 
 {% block content %}
-<h1>Welcome to Futsal Management</h1>
-<p>Book futsal grounds online, hassle-free!</p>
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Ground Image -->
+      <div class="col-md-6 mb-4">
+        {% if ground_details.photo %}
+        <img src="{{ ground_details.photo.url }}" class="img-fluid rounded shadow" alt="{{ ground_details.ground_name }}">
+        {% else %}
+        <img src="{% static 'futsal/images/hero.jpg' %}" class="img-fluid rounded shadow" alt="No Image">
+        {% endif %}
+      </div>
 
-<img src = "{{ ground_details.photo.url }}" alt = "image" style = "width:400px">
-{{ground_details.ground_name}}
-{{ground_details.location_name}}
-{{ground_details.size}}
-{{ground_details.price_per_hour}}
+      <!-- Ground Info -->
+      <div class="col-md-6">
+        <h2 class="fw-bold">{{ ground_details.ground_name }}</h2>
+        <p class="text-muted"><strong>📍 Location:</strong> {{ ground_details.location_name }}</p>
+        <p><strong>📏 Size:</strong> {{ ground_details.size }}</p>
+        <p><strong>💸 Price per Hour:</strong> Rs. {{ ground_details.price_per_hour }}</p>
+        
+        {% if ground_details.description %}
+        <p>{{ ground_details.description }}</p>
+        {% endif %}
 
-
-
-<a href="{%url 'booking' ground_details.pk %}"><button>Book now</button></a>
+        <a href="{% url 'booking' ground_details.pk %}" class="btn btn-primary btn-lg mt-3">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

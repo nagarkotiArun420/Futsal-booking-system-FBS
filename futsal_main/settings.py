@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'grounds',
     'bookings',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

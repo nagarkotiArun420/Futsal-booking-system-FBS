@@ -14,9 +14,9 @@ from grounds.models import Grounds
 # Create your views here.
 def home(request):
     featured_post = Grounds.objects.filter(is_featured  = True) #.first() can be used to show only one featured post
-    ground = Grounds.objects.all()
+    grounds = Grounds.objects.all()
     
-    return render(request,"home.html",{'featured_post':featured_post,'ground':ground})
+    return render(request,"home.html",{'featured_post':featured_post,'grounds':grounds})
 
 def register(request):
     
@@ -75,3 +75,6 @@ def profile(request):
         'profile':profile
     }
     return render(request,"userprofile.html",context)
+
+def aboutus(request):
+    return render(request,'aboutus.html')

@@ -1,4 +1,48 @@
-<footer>
-    <hr>
-    <p>&copy; 2025 Futsal Management System</p>
+<footer class="footer bg-dark text-white pt-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- About -->
+      <div class="col-md-3">
+        <h5 class="fw-bold">Futsal Booking</h5>
+        <p>Book futsal grounds online with ease. Your game, your time, your turf!</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3">
+        <h5 class="fw-bold">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'home' %}" class="footer-link">Home</a></li>
+          <li><a href="{% url 'grounds' %}" class="footer-link">Grounds</a></li>
+          <li><a href="#" class="footer-link">My Bookings</a></li>
+          <li><a href="{% url 'aboutus' %}" class="footer-link">About Us</a></li>
+          <li><a href="#" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3">
+        <h5 class="fw-bold">Contact</h5>
+        <p>📍 Kathmandu, Nepal</p>
+        <p>📞 +977-9800000000</p>
+        <p>✉️ futsalbooking@gmail.com</p>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-3">
+        <h5 class="fw-bold">Follow Us</h5>
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center mt-4 py-3 border-top border-secondary">
+    <p class="mb-0">&copy; 2025 Futsal Booking. All Rights Reserved.</p>
+  </div>
 </footer>

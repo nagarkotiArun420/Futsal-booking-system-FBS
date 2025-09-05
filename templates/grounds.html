@@ -1,23 +1,33 @@
 {% extends 'base/base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}Grounds{% endblock %}
+{% load static %}
 
 {% block content %}
-<h1>Welcome to Futsal Management</h1>
-<p>Book futsal grounds online, hassle-free!</p>
-
-<div>
-{% for ground in grounds %}
-
-<img src = "{{ ground.photo.url }}" alt = "image" style = "width:400px">
-{{ground.ground_name}}
-{{ground.location_name}}
-{{ground.size}}
-{{ground.price_per_hour}}
-<a href="{%url 'ground_details' ground.pk %}"><button> ground details </button></a>
-</div>
-
-
-{% endfor %}
-
-
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-5">Available Futsal Grounds</h1>
+    <div class="row">
+      {% for ground in grounds %}
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+          {% if ground.photo %}
+          <img src="{{ ground.photo.url }}" class="card-img-top" alt="{{ ground.ground_name }}">
+          {% else %}
+          <img src="{% static 'futsal/images/hero.jpg' %}" class="card-img-top" alt="No Image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ ground.ground_name }}</h5>
+            <p class="card-text"><strong>📍 Location:</strong> {{ ground.location_name }}</p>
+            <p class="card-text"><strong>📏 Size:</strong> {{ ground.size }}</p>
+            <p class="card-text"><strong>💸 Price/hr:</strong> Rs. {{ ground.price_per_hour }}</p>
+            <a href="{% url 'booking' ground.pk %}" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center">No grounds available at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}
