@@ -6,13 +6,20 @@
 <p>Book futsal grounds online, hassle-free!</p>
 
 <!-- Hero / Featured Post -->
-<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('path-to-your-image.jpg'); background-blend-mode: overlay; background-size: cover;">
+
+{% for featured in featured_post %}
+{% if forloop.first %}
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url({{ featured.photo.url }}); background-blend-mode: overlay; background-size: cover;">
     <div class="col-md-8 px-0">
-        <h1 class="display-4 font-italic"><a href="#" class="text-white">Featured Post Title</a></h1>
-        <p class="lead my-3">This is a short description of the featured post. It gives a quick overview of what the post is about...</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        <h1 class="display-4 font-italic"><a href="#" class="text-white">{{featured.ground_name}}</a></h1>
+        <p class="lead my-3">{{ featured.description}}</p>
+        <p class="lead my-3">{{ featured.location_name}}</p>
+
+        
     </div>
 </div>
+{% endif %}
+{% endfor %}
 
 
 

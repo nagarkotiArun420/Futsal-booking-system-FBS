@@ -18,3 +18,4 @@ def ground_details(request,pk):
     }
     
     return render(request,'ground_detail.html',context)
+

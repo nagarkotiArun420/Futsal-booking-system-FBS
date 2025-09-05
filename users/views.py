@@ -7,11 +7,16 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
+from grounds.models import Grounds
+
 
 
 # Create your views here.
 def home(request):
-    return render(request,"home.html")
+    featured_post = Grounds.objects.filter(is_featured  = True) #.first() can be used to show only one featured post
+    ground = Grounds.objects.all()
+    
+    return render(request,"home.html",{'featured_post':featured_post,'ground':ground})
 
 def register(request):
     
