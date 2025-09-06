@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from futsal_main.forms import RegistrationForm,ProfileForm
+from futsal_main.forms import RegistrationForm,ProfileForm,ContactForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -78,3 +78,19 @@ def profile(request):
 
 def aboutus(request):
     return render(request,'aboutus.html')
+
+def contact(request):
+    if request.method =="POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            print(form.errors)
+        return redirect('home')
+            
+    form = ContactForm()      
+    context = {
+        'form':form
+    }
+    
+    return render(request, 'contact.html',context)
