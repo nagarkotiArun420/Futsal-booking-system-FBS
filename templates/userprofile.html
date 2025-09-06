@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <h5 class="card-title fw-bold mb-4">Profile Information</h5>
                     <p><strong>Email:</strong> {{ user.email }}</p>
-                    <p><strong>Phone:</strong> {{ profile.phone_number|default:"N/A" }}</p>
+                    <p><strong>Phone:</strong> {{ profile.phone|default:"N/A" }}</p>
                     <p><strong>Address:</strong> {{ profile.address|default:"N/A" }}</p>
                     <p><strong>Joined:</strong> {{ user.date_joined|date:"F d, Y" }}</p>
                     <a href="#" class="btn btn-primary mt-3">Edit Profile</a>

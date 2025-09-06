@@ -16,7 +16,7 @@ class RegistrationForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('phone','photo')
+        fields = ('phone','photo','address')
         
 class BookingForm (forms.ModelForm):
     class Meta:

@@ -33,18 +33,61 @@ a:hover {
 /* ===================
    NAVBAR
 =================== */
-.navbar {
-  transition: all 0.3s ease;
+/* Glass Effect Navbar */
+.glass-navbar {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
 }
-.navbar-nav .nav-link {
-  margin: 0 0.5rem;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
+
+/* Brand */
+.glass-navbar .navbar-brand {
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
-.navbar-nav .nav-link:hover {
+.glass-navbar .navbar-brand:hover {
   color: #0d6efd;
-  transform: translateY(-2px);
 }
+
+/* Links */
+.glass-navbar .nav-link {
+  position: relative;
+  margin: 0 0.6rem;
+  font-weight: 500;
+  color: #eaeaea;
+  transition: color 0.3s ease;
+}
+.glass-navbar .nav-link:hover {
+  color: #fff;
+}
+
+/* Underline Hover Effect */
+.glass-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: width 0.3s ease;
+}
+.glass-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Buttons (Login/Register/Logout) */
+.glass-navbar .btn {
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.glass-navbar .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 
 /* ===================
    HERO SECTION
