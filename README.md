@@ -45,9 +45,9 @@ A Django-based web application for managing futsal grounds, bookings, users, and
 - Also added about us✅
 - Enhance authentication UI ✅
 - Added new field in the profile model ✅
-- Make a contact form today
-- Fix about us a little bit 
-- Make my bookings
+- Make a contact form today ✅
+- Fix about us a little bit ✅
+- Make my bookings -pending
 
 
 
