@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% block title %}My Bookings{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">📖 My Bookings</h2>
+
+    {% if mybookings %}
+        <div class="row g-4">
+            {% for mybooking in mybookings %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-lg border-0 rounded-4 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-black">{{ mybooking.ground.ground_name }}</h5>
+                            <p class="mb-1"><strong>Date:</strong> {{ mybooking.date }}</p>
+                            <p class="mb-1"><strong>Time:</strong> {{ mybooking.start_time }} - {{ mybooking.end_time }}</p>
+                            <p class="mb-1"><strong>Price:</strong> Rs. {{ mybooking.price }}</p>
+                            <p class="mb-3"><strong>Booked At:</strong> {{ mybooking.booked_at|date:"M d, Y H:i" }}</p>
+
+                            
+                                <div class="d-flex justify-content-between">
+                                {% if mybooking.status == "pending" %}
+                                    <span class="badge bg-warning text-dark mb-2">Pending</span>
+                                {% elif mybooking.status == "confirmed" %}
+                                    <span class="badge bg-success mb-2">Confirmed</span>
+                                {% elif mybooking.status == "cancelled" %}
+                                    <span class="badge bg-danger mb-2">Cancelled</span>
+                                {% else %}
+                                    <span class="badge bg-secondary mb-2">{{ mybooking.status }}</span>
+                                {% endif %}
+
+                                    {% if mybooking.status != "cancelled" %}
+                                        <a href="#" class="btn btn-sm btn-outline-danger">
+                                            Cancel
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center fs-5" role="alert">
+            🚫 You don’t have any bookings yet.
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

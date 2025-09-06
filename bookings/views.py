@@ -4,6 +4,7 @@ from futsal_main.forms import BookingForm
 from grounds.models import Grounds
 from datetime import datetime, date
 from decimal import Decimal
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -42,4 +43,16 @@ def booking(request,pk):
         'ground':ground
     }
     return render(request,'booking.html',context)
+
+
+@login_required(login_url = 'login')
+
+def mybookings(request):
+    
+    mybookings = Book.objects.filter(user = request.user)
+    context = {
+        'mybookings':mybookings
+    }
+    
+    return render(request,"mybookings.html",context)
     
