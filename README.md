@@ -43,11 +43,11 @@ A Django-based web application for managing futsal grounds, bookings, users, and
 
 - Lets polish the UI (home, grounds, ground details, profile)tomorrow ✅
 - Also added about us✅
-- Make a contact form tomorrow 
 - Enhance authentication UI ✅
+- Added new field in the profile model ✅
+- Make a contact form today
 - Fix about us a little bit 
 - Make my bookings
--
 
 
 
