@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from bookings.models import Book
 from futsal_main.forms import RegistrationForm,ProfileForm,ContactForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
@@ -70,9 +71,11 @@ def logout(request):
 def profile(request):
     user = request.user
     profile = user.profile#Get the details of  using (request.user)
+    total_bookings = Book.objects.filter(user = request.user).count()
     context={
         'user':user,
-        'profile':profile
+        'profile':profile,
+        'total_bookings':total_bookings,
     }
     return render(request,"userprofile.html",context)
 

@@ -51,8 +51,10 @@ def mybookings(request):
     
     mybookings = Book.objects.filter(user = request.user)
     context = {
-        'mybookings':mybookings
+        'mybookings':mybookings,
+        
     }
     
     return render(request,"mybookings.html",context)
+    
     

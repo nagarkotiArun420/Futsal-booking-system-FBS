@@ -41,10 +41,12 @@
         <div class="col-md-6">
             <div class="row g-3">
                 <div class="col-6">
+                    <a href = "{% url 'mybookings' %}">
                     <div class="card text-center shadow-sm p-3">
-                        <h4 class="fw-bold">{{ bookings_count|default:"0" }}</h4>
+                        <h4 class="fw-bold">{{ total_bookings |default:"0" }}</h4>
                         <p class="mb-0 text-muted">Total Bookings</p>
                     </div>
+                </a>
                 </div>
                 <div class="col-6">
                     <div class="card text-center shadow-sm p-3">
