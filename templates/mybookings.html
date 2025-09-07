@@ -31,7 +31,7 @@
                                 {% endif %}
 
                                     {% if mybooking.status != "cancelled" %}
-                                        <a href="#" class="btn btn-sm btn-outline-danger">
+                                        <a href="{% url 'cancel_booking' mybooking.pk %}" class="btn btn-sm btn-outline-danger">
                                             Cancel
                                         </a>
                                     {% endif %}

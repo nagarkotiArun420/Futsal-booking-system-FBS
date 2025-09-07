@@ -56,5 +56,10 @@ def mybookings(request):
     }
     
     return render(request,"mybookings.html",context)
+
+
     
-    
+def cancel_booking(request, pk):
+    cancel_booking = get_object_or_404(Book,pk=pk)
+    cancel_booking.delete()
+    return redirect('home')
